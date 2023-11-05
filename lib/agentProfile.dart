@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
-  var successScore = 50;
+  var successScore = 86;
   ProfilePage({
     Key? key,
   }) : super(key: key);
@@ -11,6 +11,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -22,6 +23,7 @@ class ProfilePage extends StatelessWidget {
             icon: Icon(Icons.arrow_back_ios)),
       ),
       body: SafeArea(
+        //ListView(
         child: Padding(
           padding: const EdgeInsets.only(left: 15.0, right: 15),
           child: Column(
@@ -30,7 +32,7 @@ class ProfilePage extends StatelessWidget {
             children: [
               Center(
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(50),
                   child: CircleAvatar(
                       backgroundImage: AssetImage("assets/elmer_hvac.png")),
                 ),
@@ -38,7 +40,7 @@ class ProfilePage extends StatelessWidget {
               const SizedBox(height: 20),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Text("Elmer's",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
                     textAlign: TextAlign.center),
                 const SizedBox(width: 6),
               ]),
@@ -50,13 +52,13 @@ class ProfilePage extends StatelessWidget {
                     "Success Score: ",
                     style: TextStyle(
                         color: Theme.of(context).primaryColor,
-                        fontSize: 40,
+                        fontSize: 30,
                         fontWeight: FontWeight.bold),
                   ),
                   GradientText(
                     successScore.toString(),
                     style: const TextStyle(
-                        fontSize: 40, fontWeight: FontWeight.bold),
+                        fontSize: 30, fontWeight: FontWeight.bold),
                     gradient: LinearGradient(colors: [
                       Colors.blue.shade400,
                       Colors.red.shade900,
@@ -74,7 +76,7 @@ class ProfilePage extends StatelessWidget {
                   const Text('Name: ',
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                  Text("TBD",
+                  Text("Elmer Jose",
                       style: const TextStyle(
                           fontSize: 18, fontWeight: FontWeight.w400)),
                 ],
@@ -84,7 +86,7 @@ class ProfilePage extends StatelessWidget {
                 const Text('Income: ',
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                Text("TBD",
+                Text("40,000",
                     style: const TextStyle(
                         fontSize: 18, fontWeight: FontWeight.w400))
               ]),
@@ -93,7 +95,7 @@ class ProfilePage extends StatelessWidget {
                 const Text('Number of Employees: ',
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                Text("TBD",
+                Text("15",
                     style: const TextStyle(
                         fontSize: 18, fontWeight: FontWeight.w400))
               ]),
@@ -102,7 +104,7 @@ class ProfilePage extends StatelessWidget {
                 const Text('Years in operation: ',
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                Text("TBD",
+                Text("4",
                     style: const TextStyle(
                         fontSize: 18, fontWeight: FontWeight.w400))
               ]),
@@ -111,7 +113,7 @@ class ProfilePage extends StatelessWidget {
                 const Text('Locality: ',
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                Text("TBD",
+                Text("Urban",
                     style: const TextStyle(
                         fontSize: 18, fontWeight: FontWeight.w400))
               ]),
@@ -120,7 +122,7 @@ class ProfilePage extends StatelessWidget {
                 const Text('Type of Business: ',
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                Text("TBD",
+                Text("HVAC Company",
                     style: const TextStyle(
                         fontSize: 18, fontWeight: FontWeight.w400))
               ]),
@@ -129,10 +131,18 @@ class ProfilePage extends StatelessWidget {
                 const Text('Prompt: ',
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                Text("TBD",
-                    style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.w400))
               ]),
+              RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  text:
+                      "Ever Since I started this business, I have always wanted achieve the best I can.",
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
               SizedBox(height: 50),
               SizedBox(
                 height: 55,

@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:small_successes/agentListView.dart';
+import 'package:small_successes/smb_form.dart';
 
 class agentLogin extends StatelessWidget {
   @override
@@ -53,6 +55,7 @@ class agentLogin extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   child: TextFormField(
+                    obscureText: true,
                     style: TextStyle(
                       color: Theme.of(context).primaryColor,
                       fontWeight: FontWeight.bold,
@@ -92,8 +95,43 @@ class agentLogin extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Theme.of(context).primaryColor,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const AgentList();
+                      }));
+                    },
                     child: Text('Login',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.normal)),
+                  ),
+                ),
+                SizedBox(height: 20),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text("A Business?",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                      textAlign: TextAlign.center),
+                  const SizedBox(width: 6),
+                ]),
+                SizedBox(height: 5),
+                SizedBox(
+                  height: 55,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                    ),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return smbform();
+                      }));
+                    },
+                    child: Text('Get Started',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,

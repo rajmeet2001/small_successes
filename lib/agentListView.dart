@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:small_successes/agentLogin.dart';
+import 'package:small_successes/agentProfile.dart';
 import 'package:small_successes/extra_code/profilepage.dart';
 
 class AgentList extends StatefulWidget {
@@ -21,7 +23,11 @@ class _AgentListState extends State<AgentList> {
             size: 30,
             color: Theme.of(context).primaryColor,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return agentLogin();
+            }));
+          },
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -38,41 +44,71 @@ class _AgentListState extends State<AgentList> {
         padding: const EdgeInsets.all(8),
         children: <Widget>[
           ListTile(
-              title: Text("Elmer's",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-              subtitle: Text("HVAC Company"),
-              leading: CircleAvatar(
-                  backgroundImage: AssetImage("assets/elmer_hvac.png")),
-              trailing: Icon(Icons.arrow_forward_ios)),
+            title: Text("Elmer's",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            subtitle: Text("HVAC Company"),
+            leading: CircleAvatar(
+                backgroundImage: AssetImage("assets/elmer_hvac.png")),
+            trailing: Icon(Icons.arrow_forward_ios),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return ProfilePage();
+              }));
+            },
+          ),
           ListTile(
-              title: Text("Globe India",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-              subtitle: Text("Grocery Store"),
-              leading: CircleAvatar(
-                  backgroundImage: AssetImage("assets/globe_india.png")),
-              trailing: Icon(Icons.arrow_forward_ios)),
+            title: Text("Globe India",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            subtitle: Text("Grocery Store"),
+            leading: CircleAvatar(
+                backgroundImage: AssetImage("assets/globe_india.png")),
+            trailing: Icon(Icons.arrow_forward_ios),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return ProfilePage();
+              }));
+            },
+          ),
           ListTile(
-              title: Text("Native",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-              subtitle: Text("Landscaping Company"),
-              leading: CircleAvatar(
-                  backgroundImage:
-                      AssetImage("assets/landscaping_business.jpeg")),
-              trailing: Icon(Icons.arrow_forward_ios)),
+            title: Text("Native",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            subtitle: Text("Landscaping Company"),
+            leading: CircleAvatar(
+                backgroundImage:
+                    AssetImage("assets/landscaping_business.jpeg")),
+            trailing: Icon(Icons.arrow_forward_ios),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return ProfilePage();
+              }));
+            },
+          ),
           ListTile(
-              title: Text("Spice Bazaar",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-              subtitle: Text("Spice Store"),
-              leading: CircleAvatar(
-                  backgroundImage: AssetImage("assets/spice_bazaar.png")),
-              trailing: Icon(Icons.arrow_forward_ios)),
+            title: Text("Spice Bazaar",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            subtitle: Text("Spice Store"),
+            leading: CircleAvatar(
+                backgroundImage: AssetImage("assets/spice_bazaar.png")),
+            trailing: Icon(Icons.arrow_forward_ios),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return ProfilePage();
+              }));
+            },
+          ),
           ListTile(
-              title: Text("Mandie's",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-              subtitle: Text("Event Planning Agency"),
-              leading: CircleAvatar(
-                  backgroundImage: AssetImage("assets/mandie_eventplan.jpeg")),
-              trailing: Icon(Icons.arrow_forward_ios)),
+            title: Text("Mandie's",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            subtitle: Text("Event Planning Agency"),
+            leading: CircleAvatar(
+                backgroundImage: AssetImage("assets/mandie_eventplan.jpeg")),
+            trailing: Icon(Icons.arrow_forward_ios),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return ProfilePage();
+              }));
+            },
+          ),
         ],
       )),
     );

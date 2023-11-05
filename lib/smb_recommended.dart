@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:small_successes/smb_form.dart';
 
 class SMBRecommended extends StatefulWidget {
   const SMBRecommended({Key? key}) : super(key: key);
@@ -20,7 +21,11 @@ class _SMBRecommendedState extends State<SMBRecommended> {
             size: 30,
             color: Theme.of(context).primaryColor,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return smbform();
+            }));
+          },
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,

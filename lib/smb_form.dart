@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:small_successes/agentLogin.dart';
+import 'package:small_successes/smb_recommended.dart';
 
 class smbform extends StatelessWidget {
   //const smbform({super.key});
@@ -24,7 +26,12 @@ class smbform extends StatelessWidget {
                           size: 30,
                           color: Theme.of(context).primaryColor,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return agentLogin();
+                          }));
+                        },
                       ),
                     ],
                   ),
@@ -215,7 +222,7 @@ class smbform extends StatelessWidget {
                       padding:
                           EdgeInsets.symmetric(horizontal: 0, vertical: 15),
                       child: DropdownButton<String>(
-                        hint: Text("Bridal Shop",
+                        hint: Text("HVAC",
                             style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w800,
@@ -266,7 +273,12 @@ class smbform extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Theme.of(context).primaryColor,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const SMBRecommended();
+                        }));
+                      },
                       child: Text('Submit',
                           style: TextStyle(
                               color: Colors.white,
@@ -283,7 +295,12 @@ class smbform extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const SMBRecommended();
+                        }));
+                      },
                       child: Text('Submit',
                           style: TextStyle(
                               color: Colors.white,
