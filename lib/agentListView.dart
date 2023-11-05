@@ -1,48 +1,83 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:small_successes/extra_code/profilepage.dart';
 
-class agentList extends StatelessWidget {
-  const agentList({super.key});
+class AgentList extends StatefulWidget {
+  const AgentList({Key? key}) : super(key: key);
 
   @override
+  State<AgentList> createState() => _AgentListState();
+}
+
+class _AgentListState extends State<AgentList> {
+  List<dynamic> users = [];
+  @override
   Widget build(BuildContext context) {
-    return _buildPage();
-  }
-
-  Widget _buildPage() {
-    return SafeArea(
-        child: Scaffold(
-            body: Padding(
-      padding: EdgeInsets.all(5),
-    )));
-  }
-
-  Widget _buildList() {
-    return ListView.separated(
-      itemBuilder: (context, position) {
-        return Card(
-          child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Text(
-              'List Item $position',
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            size: 30,
+            color: Theme.of(context).primaryColor,
           ),
-        );
-      },
-      separatorBuilder: (context, position) {
-        return Card(
-          color: Colors.grey,
-          child: Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Text(
-              'Separator $position',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-        );
-      },
-      itemCount: 20,
+          onPressed: () {},
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Text(
+          "SMB Profiles",
+          style: TextStyle(
+              color: Theme.of(context).primaryColor,
+              fontWeight: FontWeight.bold,
+              fontSize: 30),
+        ),
+      ),
+      body: SafeArea(
+          child: ListView(
+        padding: const EdgeInsets.all(8),
+        children: <Widget>[
+          ListTile(
+              title: Text("Elmer's",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+              subtitle: Text("HVAC Company"),
+              leading: CircleAvatar(
+                  backgroundImage: AssetImage("assets/elmer_hvac.png")),
+              trailing: Icon(Icons.arrow_forward_ios)),
+          ListTile(
+              title: Text("Globe India",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+              subtitle: Text("Grocery Store"),
+              leading: CircleAvatar(
+                  backgroundImage: AssetImage("assets/globe_india.png")),
+              trailing: Icon(Icons.arrow_forward_ios)),
+          ListTile(
+              title: Text("Native",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+              subtitle: Text("Landscaping Company"),
+              leading: CircleAvatar(
+                  backgroundImage:
+                      AssetImage("assets/landscaping_business.jpeg")),
+              trailing: Icon(Icons.arrow_forward_ios)),
+          ListTile(
+              title: Text("Spice Bazaar",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+              subtitle: Text("Spice Store"),
+              leading: CircleAvatar(
+                  backgroundImage: AssetImage("assets/spice_bazaar.png")),
+              trailing: Icon(Icons.arrow_forward_ios)),
+          ListTile(
+              title: Text("Mandie's",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+              subtitle: Text("Event Planning Agency"),
+              leading: CircleAvatar(
+                  backgroundImage: AssetImage("assets/mandie_eventplan.jpeg")),
+              trailing: Icon(Icons.arrow_forward_ios)),
+        ],
+      )),
     );
   }
 }
