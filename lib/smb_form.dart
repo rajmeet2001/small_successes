@@ -164,7 +164,7 @@ class smbform extends StatelessWidget {
                       decoration: InputDecoration(
                           border: InputBorder.none,
                           prefixIcon: Icon(Icons.money, size: 30),
-                          labelText: "Expenses",
+                          labelText: "Number of Employees",
                           labelStyle: TextStyle(
                             fontSize: 18,
                             color: Colors.grey[400],
@@ -172,6 +172,45 @@ class smbform extends StatelessWidget {
                           )),
                     ),
                   ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    child: TextFormField(
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22,
+                      ),
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          prefixIcon: Icon(Icons.money, size: 30),
+                          labelText: "Year of Establishment",
+                          labelStyle: TextStyle(
+                            fontSize: 18,
+                            color: Colors.grey[400],
+                            fontWeight: FontWeight.w800,
+                          )),
+                    ),
+                  ),
+                  Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 0, vertical: 15),
+                      child: DropdownButton<String>(
+                        hint: Text("Urban",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w800,
+                                fontStyle: FontStyle.normal)),
+                        items: <String>[
+                          'Urban',
+                          'Rural',
+                        ].map((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                        onChanged: (_) {},
+                      )),
                   Container(
                       padding:
                           EdgeInsets.symmetric(horizontal: 0, vertical: 15),

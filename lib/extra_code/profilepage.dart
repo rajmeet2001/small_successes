@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({
+class extraProfile extends StatelessWidget {
+  const extraProfile({
     Key? key,
   }) : super(key: key);
 

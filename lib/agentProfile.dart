@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({
+  var successScore = 50;
+  ProfilePage({
     Key? key,
   }) : super(key: key);
 
@@ -37,16 +38,31 @@ class ProfilePage extends StatelessWidget {
               const SizedBox(height: 20),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Text("Elmer's",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50),
                     textAlign: TextAlign.center),
                 const SizedBox(width: 6),
               ]),
               const SizedBox(height: 6),
-              Center(
-                child: Text(
-                  "contact@elmers.com",
-                  style: TextStyle(color: Colors.grey.shade800),
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Success Score: ",
+                    style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  GradientText(
+                    successScore.toString(),
+                    style: const TextStyle(
+                        fontSize: 40, fontWeight: FontWeight.bold),
+                    gradient: LinearGradient(colors: [
+                      Colors.blue.shade400,
+                      Colors.red.shade900,
+                    ]),
+                  ),
+                ],
               ),
               const SizedBox(height: 60),
               const Divider(
@@ -55,7 +71,7 @@ class ProfilePage extends StatelessWidget {
               const SizedBox(height: 30),
               Row(
                 children: [
-                  const Text('Username: ',
+                  const Text('Name: ',
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                   Text("TBD",
@@ -65,7 +81,7 @@ class ProfilePage extends StatelessWidget {
               ),
               const SizedBox(height: 25),
               Row(children: [
-                const Text('Age: ',
+                const Text('Income: ',
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 Text("TBD",
@@ -74,9 +90,7 @@ class ProfilePage extends StatelessWidget {
               ]),
               const SizedBox(height: 25),
               Row(children: [
-                const Text(
-                    ''
-                    'Gender: ',
+                const Text('Number of Employees: ',
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 Text("TBD",
@@ -85,7 +99,7 @@ class ProfilePage extends StatelessWidget {
               ]),
               const SizedBox(height: 25),
               Row(children: [
-                const Text('Phone Number: ',
+                const Text('Years in operation: ',
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 Text("TBD",
@@ -94,7 +108,7 @@ class ProfilePage extends StatelessWidget {
               ]),
               const SizedBox(height: 25),
               Row(children: [
-                const Text('Country: ',
+                const Text('Locality: ',
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 Text("TBD",
@@ -103,17 +117,66 @@ class ProfilePage extends StatelessWidget {
               ]),
               const SizedBox(height: 25),
               Row(children: [
-                const Text('Registered: ',
+                const Text('Type of Business: ',
                     style:
                         TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 Text("TBD",
                     style: const TextStyle(
                         fontSize: 18, fontWeight: FontWeight.w400))
               ]),
+              const SizedBox(height: 25),
+              Row(children: [
+                const Text('Prompt: ',
+                    style:
+                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Text("TBD",
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.w400))
+              ]),
+              SizedBox(height: 50),
+              SizedBox(
+                height: 55,
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Theme.of(context).primaryColor,
+                  ),
+                  onPressed: () {},
+                  child: Text('Contact',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.normal)),
+                ),
+              )
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class GradientText extends StatelessWidget {
+  const GradientText(
+    this.text, {
+    required this.gradient,
+    this.style,
+  });
+
+  final String text;
+  final TextStyle? style;
+  final Gradient gradient;
+
+  @override
+  Widget build(BuildContext context) {
+    return ShaderMask(
+      blendMode: BlendMode.srcIn,
+      shaderCallback: (bounds) => gradient.createShader(
+        Rect.fromLTWH(0, 0, bounds.width, bounds.height),
+      ),
+      child: Text(text, style: style),
     );
   }
 }
