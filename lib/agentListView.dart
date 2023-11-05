@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:small_successes/extra_code/profilepage.dart';
 
@@ -13,7 +11,6 @@ class AgentList extends StatefulWidget {
 }
 
 class _AgentListState extends State<AgentList> {
-  List<dynamic> users = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

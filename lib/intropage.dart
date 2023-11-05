@@ -4,6 +4,7 @@ import 'package:small_successes/agentLogin.dart';
 import 'package:small_successes/agentProfile.dart';
 import 'package:small_successes/extra_code/profilepage.dart';
 import 'package:small_successes/smb_form.dart';
+import 'package:small_successes/smb_recommended.dart';
 
 class Intro extends StatefulWidget {
   const Intro({super.key});
@@ -15,6 +16,6 @@ class Intro extends StatefulWidget {
 class _IntroState extends State<Intro> {
   @override
   Widget build(BuildContext context) {
-    return ProfilePage();
+    return SMBRecommended();
   }
 }
