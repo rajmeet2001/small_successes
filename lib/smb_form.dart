@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 class smbform extends StatelessWidget {
   //const smbform({super.key});
-  String selectedValue = "Business Owners Policy (BOP)";
 
   @override
   Widget build(BuildContext context) {
@@ -165,7 +164,7 @@ class smbform extends StatelessWidget {
                       decoration: InputDecoration(
                           border: InputBorder.none,
                           prefixIcon: Icon(Icons.money, size: 30),
-                          labelText: "Income",
+                          labelText: "Expenses",
                           labelStyle: TextStyle(
                             fontSize: 18,
                             color: Colors.grey[400],
@@ -177,12 +176,18 @@ class smbform extends StatelessWidget {
                       padding:
                           EdgeInsets.symmetric(horizontal: 0, vertical: 15),
                       child: DropdownButton<String>(
-                        hint: Text("Business Type",
+                        hint: Text("Bridal Shop",
                             style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w800,
                                 fontStyle: FontStyle.normal)),
-                        items: <String>['A', 'B', 'C', 'D'].map((String value) {
+                        items: <String>[
+                          'Bridal Shop',
+                          'Appliance - sales and service',
+                          'Carpentry',
+                          'Real Estate Agents',
+                          'Food Shop'
+                        ].map((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
                             child: Text(value),
