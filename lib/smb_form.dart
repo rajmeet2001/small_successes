@@ -274,6 +274,23 @@ class smbform extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               fontStyle: FontStyle.normal)),
                     ),
+                  ),
+                  SizedBox(height: 10),
+                  SizedBox(
+                    height: 55,
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                      ),
+                      onPressed: () {},
+                      child: Text('Submit',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              fontStyle: FontStyle.normal)),
+                    ),
                   )
                 ],
               ),
