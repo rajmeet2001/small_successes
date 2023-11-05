@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-class extraLogin extends StatelessWidget {
+class agentLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,14 +16,14 @@ class extraLogin extends StatelessWidget {
                 Icon(Icons.person_outlined, color: Colors.grey[300], size: 150),
                 SizedBox(height: 13),
                 Text(
-                  "Tell us about you",
+                  "Agent Login",
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  "Enter to Continue",
+                  "Please enter your credentials",
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
@@ -42,7 +42,7 @@ class extraLogin extends StatelessWidget {
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         prefixIcon: Icon(Icons.mail, size: 30),
-                        labelText: "Name",
+                        labelText: "Username",
                         labelStyle: TextStyle(
                           fontSize: 18,
                           color: Colors.grey[400],
@@ -61,7 +61,7 @@ class extraLogin extends StatelessWidget {
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         prefixIcon: Icon(Icons.lock, size: 30),
-                        labelText: "Email",
+                        labelText: "Password",
                         labelStyle: TextStyle(
                           fontSize: 18,
                           color: Colors.grey[400],
@@ -75,7 +75,7 @@ class extraLogin extends StatelessWidget {
                     TextButton(
                         onPressed: () {},
                         child: Text(
-                          "Forgot Me",
+                          "Forgot Password",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -93,7 +93,7 @@ class extraLogin extends StatelessWidget {
                       backgroundColor: Theme.of(context).primaryColor,
                     ),
                     onPressed: () {},
-                    child: Text('Elevated Button',
+                    child: Text('Login',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
