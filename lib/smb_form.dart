@@ -15,7 +15,7 @@ class smbform extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: 40),
-                Icon(Icons.person_outlined, color: Colors.grey[300], size: 45),
+                Icon(Icons.person_outlined, color: Colors.grey[300], size: 150),
                 SizedBox(height: 13),
                 Text(
                   "Tell us about you",
@@ -77,14 +77,31 @@ class smbform extends StatelessWidget {
                     TextButton(
                         onPressed: () {},
                         child: Text(
-                          "Submit",
+                          "Forgot Me",
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: Theme.of(context).primaryColor,
                           ),
                         ))
                   ],
+                ),
+                SizedBox(height: 10),
+                SizedBox(
+                  height: 55,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).primaryColor,
+                    ),
+                    onPressed: () {},
+                    child: Text('Elevated Button',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.normal)),
+                  ),
                 )
               ],
             ),
