@@ -30,9 +30,8 @@ class ProfilePage extends StatelessWidget {
               Center(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    "assets/elmer_hvac.png",
-                  ),
+                  child: CircleAvatar(
+                      backgroundImage: AssetImage("assets/elmer_hvac.png")),
                 ),
               ),
               const SizedBox(height: 20),
